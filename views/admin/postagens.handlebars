@@ -1,0 +1,77 @@
+<h1>Lista de Postagens
+    <a href="/admin/postagens/add">
+        <button class="btn btn-success ml-3">Nova Postagem
+            <i class="far fa-plus-square pl-2"></i>
+        </button>
+    </a>
+</h1>
+<hr>
+<div class="row mb-5">
+    {{#each postagens}}
+
+
+
+
+
+
+
+
+
+
+    <div class="col-sm-4 mt-3 ">
+        <div class="card h-100 ">
+            <div class="card-body ">
+                <h4 class="card-title font-weight-bold text-monospace ">{{titulo}} </h4>
+                <hr>
+                <div class="ml-1">
+                    <p class="card-text mt-3"><span class="font-weight-bold text-monospace ">Caminho:</span>{{slug}}
+                    <p class="card-text"><span class="font-weight-bold text-monospace">Descrição:
+                        </span>{{descricao}}
+                    </p>
+                    <p class="card-text"><span class="font-weight-bold text-monospace">Categoria:
+                        </span>{{categoria.nome}}
+                    </p>
+                    <p class="card-text"><span class="font-weight-bold text-monospace">Data de Criação:
+                        </span>{{data}}
+                    </p>
+                    <p class="card-text"><span class="font-weight-bold text-monospace">Acessos:
+                        </span>2309483
+                    </p>
+
+                </div>
+
+
+                <div class="row mt-2" style="margin-left: 1%;">
+                    <div class="col-xs-6 text-left">
+                        <a href="/admin/postagens/edit/{{_id}}">
+                            <button type="button" class="btn btn-outline-warning btn-sm mr-2 ">
+                                Editar <i class="far fa-edit"></i>
+                            </button>
+                        </a>
+                    </div>
+
+
+                    <div class="col-xs-6 text-right">
+                        <form action="/admin/postagens/deletar" method="POST" style="inline-block">
+                            <input type="hidden" name="id" value="{{_id}}">
+                            <button type="submit" class="btn btn-outline-danger btn-sm   ">
+                                Remover <i class="far fa-times-circle"></i>
+                            </button></form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+    {{else}}
+    <p>Não existe nenhuma postagem ainda</p>
+    {{/each}}
+
+</div>

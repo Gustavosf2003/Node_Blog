@@ -1,0 +1,64 @@
+<h1>Lista de Categorias
+
+</h1>
+<hr>
+<div class="row mb-5">
+    {{#each categorias}}
+
+
+
+
+
+
+
+
+    <a href="/categorias/{{slug}}" style="text-decoration:none;color:black">
+
+        <div class="col-sm-4 mt-3 ">
+            <div class="card h-100 ">
+                <div class="card-body ">
+                    <h4 class="card-title font-weight-bold text-monospace ">{{nome}} </h4>
+                    <hr>
+                    <div class="ml-1">
+                        <p class="card-text mt-3"><span class="font-weight-bold text-monospace ">Caminho:</span>{{slug}}
+
+                        <p class="card-text"><span class="font-weight-bold text-monospace">Data de Criação:
+                            </span>{{data}}
+                        </p>
+                        <p class="card-text"><span class="font-weight-bold text-monospace">Acessos:
+                            </span>2309483
+                        </p>
+
+                    </div>
+
+
+                    <div class="row mt-2" style="margin-left: 1%;">
+                        <div class="col-xs-6 text-left">
+                            <a href="/categorias/{{slug}}">
+                                <button type="button" class="btn btn-outline-success btn-sm mr-2 ">
+                                    Pesquisar <i class="fas fa-search"></i>
+                                </button>
+                            </a>
+                        </div>
+
+
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </a>
+
+
+
+
+
+
+
+
+    {{else}}
+    <p>Não existe nenhuma postagem ainda</p>
+    {{/each}}
+
+</div>

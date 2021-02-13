@@ -1,0 +1,72 @@
+{{#each erros}}
+
+
+
+<div class="alert alert-danger alert-dismissible fade show" role="alert">
+    <i class="fas fa-exclamation-circle"></i>
+    {{texto}}
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+
+{{else}}
+
+{{/each}}
+
+<h3 style="text-align:center" class="mb-3">Adicionar Categorias </h3>
+<div class="card mb-5">
+    <div class="card-body">
+
+        <form action="/admin/postagens/nova" method="POST">
+
+            <label for="titulo"><b>Título: </b></label>
+            <input type="text" placeholder="Digite o Título" name="titulo" class="form-control mb-3 ">
+
+            <label for="slug"><b>Slug: </b></label>
+            <input type="text" placeholder="Digite o slug" name="slug" class="form-control mb-3">
+
+            <label for="descricao"><b>Descrição: </b></label>
+            <input type="text" placeholder="Digite a descrição" name="descricao" class="form-control mb-3">
+
+            <label for="categoria"><b>Categorias: </b></label></br>
+
+            <select name="categoria" class="custom-select ">
+                <div class="dropdown-menu">
+                    <option value="" disabled selected>Selecione uma opção: </option>
+                    {{#each categorias}}
+                    <option value="{{_id}}">{{nome}}</option>
+
+                    {{else}}
+                    <option value="0" class="dropdown-item">Sem categorias registradas</option>
+                    {{/each}}
+
+                </div>
+
+
+            </select>
+
+
+
+
+
+
+            <label for="conteudo" class="mt-3"><b>Conteúdo: </b></label>
+            <textarea type="text" placeholder="O quê você está pensando hoje?   :)" name="conteudo"
+                class="form-control mb-3" required></textarea>
+
+
+
+
+
+            <button class="btn btn-success" type="submit">Postar <i class="fas fa-plus ml-1"></i></button>
+            <a href="/admin/categorias">
+                <div class="btn btn-danger" style="display: inline-block;">Cancelar <i class="fas fa-times"></i>
+                </div>
+            </a>
+
+        </form>
+
+    </div>
+
+</div>

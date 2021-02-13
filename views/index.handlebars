@@ -1,0 +1,70 @@
+<div class="jumbotron">
+
+
+    
+    <h1 class="display-4">Seja Bem-Vindo ao BlogAPP !</h1>
+    <p class="lead">Fique informado com od blogs mais atualizados :)</p>
+    <hr class="my-4">
+    <p>Publique um blog</p>
+
+
+
+</div>
+
+<h2>Posts recentes:</h2>
+<hr>
+
+{{#each postagens}}
+<div class="card mt-2">
+
+    <div class="card-body">
+
+        <img class="circulo" src="/img/foto.png"></img>
+        <a href="/postagem/{{slug}}" style="text-decoration: none;color:black">
+            <strong class="titulo-postagem ml-2 "> {{titulo}}</strong>
+        </a>
+
+
+
+
+        <p class="text-justify mt-3">
+
+            {{ conteudo}}
+
+            <a href="/postagem/{{slug}}">
+                <button class="btn btn-outline-primary btn-sm  ml-3  ">
+                    Ver mais <i class="fas fa-glasses ml-1"> </i>
+                </button>
+            </a>
+
+
+        </p>
+        <div style="float: right;">
+
+
+            <small class="mr-5">
+                <b>Categorias:</b> {{categoria.nome}}
+            </small>
+            <small>{{data}}</small>
+
+
+
+
+        </div>
+
+
+
+    </div>
+</div>
+{{else}}
+<h5>Nenumuss Postagem</h5>
+{{/each}}
+
+<style>
+    .circulo {
+        width: 50px;
+        height: 50px;
+        background-color: red;
+        border-radius: 50%;
+    }
+</style>

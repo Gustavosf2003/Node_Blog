@@ -1,0 +1,37 @@
+<h1>{{categoria.nome}}</h1>
+<hr class="mb-5">
+
+{{#each postagens}}
+
+
+
+<div class="card mt-2 ">
+
+    <div class="card-body">
+        <h3> {{titulo}}</h3>
+        <p>
+
+            {{conteudo}}
+
+            <a href="/postagem/{{slug}}">
+                <button class="btn btn-outline-primary btn-sm  ml-3  ">
+                    Ver mais <i class="fas fa-glasses"></i>
+                </button>
+            </a>
+
+
+        </p>
+
+        <small style="float: right;">{{data}}</small>
+
+
+
+    </div>
+</div>
+
+
+
+{{else}}
+{{/each}}
+
+<div class="mb-5"></div>

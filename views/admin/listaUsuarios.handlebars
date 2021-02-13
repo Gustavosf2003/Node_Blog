@@ -1,0 +1,80 @@
+<h1>Lista de Usuarios
+
+</h1>
+<hr>
+<div class="row mb-5">
+    {{#each usuarios}}
+
+
+
+
+
+
+
+
+
+
+    <div class="col-sm-4 mt-3 ">
+        <div class="card h-100 ">
+            <div class="card-body ">
+                <h4 class="card-title font-weight-bold text-monospace ">{{nome}} </h4>
+                <hr>
+                <div class="ml-1">
+                    <p class="card-text mt-3"><span
+                            class="font-weight-bold text-monospace ">Email:</span>{{localizacao}}
+
+                    <p class="card-text"><span class="font-weight-bold text-monospace">Senha:
+                        </span>{{sexo}}
+                    </p>
+                    <p class="card-text"><span class="font-weight-bold text-monospace">Acessos:
+                        </span>2309483
+                    </p>
+
+                </div>
+
+
+
+                <div class="row mt-2" style="margin-left: 1%;">
+                    <div class="col-xs-6 text-left">
+
+                        <input value="{{_id}}" name="id" type="hidden">
+
+                        <a href="listausuarios/{{_id}}">
+                            <button type="submit" class="btn btn-outline-success btn-sm mr-2 ">Ver mais <i
+                                    class="fas fa-search"></i></button>
+
+
+                        </a>
+
+
+                        <form action="/admin/listausuarios/deletar" method="POST" class="mt-1">
+                            <input value="{{_id}}" name="id" type="hidden">
+                            <button type="submit" class="btn btn-outline-danger btn-sm mr-2 ">
+                                Apagar <i class="fas fa-search"></i>
+                            </button>
+                        </form>
+
+
+                    </div>
+
+
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+    {{else}}
+    <p>Não existe nenhuma postagem ainda</p>
+    {{/each}}
+
+</div>
